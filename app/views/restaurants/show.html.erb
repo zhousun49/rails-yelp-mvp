@@ -1,0 +1,12 @@
+<h1 style="margin-top: 5%; text-align: center"><%= @restaurant.name %></h1>
+<p style="margin-top: 5%; text-align: center">It is located at: <%= @restaurant.address %></p>
+<p style="margin-top: 5%; text-align: center">It makes <%= @restaurant.category %> food</p>
+<p style="margin-top: 5%; text-align: center">Contact Them: <%= @restaurant.phone_number %></p>
+<p style="margin-top: 5%; text-align: center">Valuable Comments:</p>
+<% @restaurant.reviews.each do |r| %>
+  <li style="margin-top: 2%; text-align: center"><%= r.rating %>--<%= r.content %></li>
+<% end %>
+<p style="margin-top: 3%; text-align: center"><%= link_to 'Add a comment', new_restaurant_review_path(@restaurant),  class: "btn btn-primary"%></p>
+<p style="margin-top: 3%; text-align: center"><%= link_to 'Go Back', restaurants_path,  class: "btn btn-primary"%></p>
+
+
